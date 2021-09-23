@@ -25,5 +25,3 @@ images:
 - 'gcr.io/$PROJECT_ID/myapp:latest'
 - 'gcr.io/$PROJECT_ID/myapp:$COMMIT_SHA'
 - 'gcr.io/$PROJECT_ID/myapp:$BUILD_ID'
-options:
- logging: NONE
