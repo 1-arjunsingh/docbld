@@ -43,10 +43,10 @@ default_args = {
 #table_list_file_path = gs://bqdts_us/*.csv
 
 # Source Bucket
-source_bucket = "bqdts_us1"
+source_bucket = "bqdts_us"
 
 # Destination Bucket
-dest_bucket = "bqdts_eu1"
+dest_bucket = "bqdts_eu"
 
 # --------------------------------------------------------------------------------
 # Set GCP logging
@@ -87,9 +87,9 @@ with models.DAG(
     # Airflow tasks
     #for record in all_records:
     #logger.info('Generating tasks to transfer table: {}'.format(record))
-proj='durable-cacao-342915'
-dataset_source='KIRTI'
-dataset_dest='ARJUN'
+proj='proj'
+dataset_source='source_dataset'
+dataset_dest='dest_dataset'
 table_source = 'T1_transfer'
 table_dest = 'T1_transfer'
 
