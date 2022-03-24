@@ -1,0 +1,25 @@
+max_ingestion_time=timeCompare(destination_project_id,destination_dataset_id,table_prefix,transfer_table_id)                    
+
+                    max_ingestion_time_query1= """select DATETIME("{}", "Europe/Berlin") as ld, DATETIME("{}", "Europe/Berlin") as mx """.format(last_modified_time,max_ingestion_time)
+
+                    query_job = client.query(max_ingestion_time_query1)
+
+                    ddl_results = query_job.result()
+
+                    
+
+                    ingestion_time_list = list(ddl_results)
+
+                    
+
+                    for item in ingestion_time_list:
+
+                        max_ingestion_tm=item[0]
+
+                        print("=============================")
+
+                        print("last_mod = {}".format(item[0]))
+
+                        print("max_ing  = {}".format(item[1]))
+
+                        print("=============================")
